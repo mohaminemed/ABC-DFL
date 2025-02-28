@@ -1,0 +1,1023 @@
+{
+  "caliper": {
+      "blockchain": "ethereum"
+  },
+  "ethereum": {
+      "txFeeCap": 6.00,
+      "url": "ws://127.0.0.1:8546",
+      "contractDeployerAddress": "0x01CD6F9962d2e6451143D20eEB93C0ECCAC241c9",
+      "contractDeployerAddressPrivateKey": "0xb383e58579c46debcb4fb1649cea60b2c2a0f55df445068ea9dee7638f500e22",
+      "contractDeployerAddressPassword": "d1WUuJPCpTfSSvo",
+      "fromAddress":"0x627306090abaB3A6e1400e9345bC60c78a8BEf57",
+      "fromAddressPrivateKey":"0xc87509a1c067bbde78beb793e6fa76530b6382a4c0241e5e4a9ec0a0f44dc0d3",
+      "fromAddressPassword": "d1WUuJPCpTfSSvo",
+      "transactionConfirmationBlocks": 1,
+      "chainId": 1337,
+      "contracts": {
+          "ModelManagement":{
+            "address":"0x446e083592D2dFa6661E20097F6898990C3CACE5",
+              "estimateGas": true,
+              "abi": [
+                {
+                  "inputs": [],
+                  "stateMutability": "nonpayable",
+                  "type": "constructor"
+                },
+                {
+                  "anonymous": false,
+                  "inputs": [
+                    {
+                      "indexed": true,
+                      "internalType": "uint256",
+                      "name": "modelId",
+                      "type": "uint256"
+                    },
+                    {
+                      "indexed": true,
+                      "internalType": "address",
+                      "name": "chargingStation",
+                      "type": "address"
+                    }
+                  ],
+                  "name": "ChargingStationJoinedModel",
+                  "type": "event"
+                },
+                {
+                  "anonymous": false,
+                  "inputs": [
+                    {
+                      "indexed": true,
+                      "internalType": "address",
+                      "name": "chargingStation",
+                      "type": "address"
+                    }
+                  ],
+                  "name": "ChargingStationRegistered",
+                  "type": "event"
+                },
+                {
+                  "anonymous": false,
+                  "inputs": [
+                    {
+                      "indexed": true,
+                      "internalType": "address",
+                      "name": "modelPublisher",
+                      "type": "address"
+                    },
+                    {
+                      "indexed": true,
+                      "internalType": "uint256",
+                      "name": "modelId",
+                      "type": "uint256"
+                    },
+                    {
+                      "indexed": false,
+                      "internalType": "uint256",
+                      "name": "amount",
+                      "type": "uint256"
+                    }
+                  ],
+                  "name": "DepositMade",
+                  "type": "event"
+                },
+                {
+                  "anonymous": false,
+                  "inputs": [
+                    {
+                      "indexed": true,
+                      "internalType": "uint256",
+                      "name": "modelId",
+                      "type": "uint256"
+                    },
+                    {
+                      "indexed": false,
+                      "internalType": "uint256",
+                      "name": "amountPerCS",
+                      "type": "uint256"
+                    }
+                  ],
+                  "name": "DepositReleased",
+                  "type": "event"
+                },
+                {
+                  "anonymous": false,
+                  "inputs": [
+                    {
+                      "indexed": true,
+                      "internalType": "uint256",
+                      "name": "modelId",
+                      "type": "uint256"
+                    },
+                    {
+                      "indexed": true,
+                      "internalType": "address",
+                      "name": "cs",
+                      "type": "address"
+                    },
+                    {
+                      "indexed": false,
+                      "internalType": "uint256",
+                      "name": "round",
+                      "type": "uint256"
+                    },
+                    {
+                      "indexed": false,
+                      "internalType": "bytes32",
+                      "name": "hashCID",
+                      "type": "bytes32"
+                    }
+                  ],
+                  "name": "IntermediateModelSubmitted",
+                  "type": "event"
+                },
+                {
+                  "anonymous": false,
+                  "inputs": [
+                    {
+                      "indexed": true,
+                      "internalType": "uint256",
+                      "name": "modelId",
+                      "type": "uint256"
+                    },
+                    {
+                      "indexed": false,
+                      "internalType": "string",
+                      "name": "CID",
+                      "type": "string"
+                    }
+                  ],
+                  "name": "ModelPublished",
+                  "type": "event"
+                },
+                {
+                  "anonymous": false,
+                  "inputs": [
+                    {
+                      "indexed": true,
+                      "internalType": "address",
+                      "name": "modelPublisher",
+                      "type": "address"
+                    }
+                  ],
+                  "name": "ModelPublisherRegistered",
+                  "type": "event"
+                },
+                {
+                  "anonymous": false,
+                  "inputs": [
+                    {
+                      "indexed": true,
+                      "internalType": "address",
+                      "name": "cs",
+                      "type": "address"
+                    },
+                    {
+                      "indexed": false,
+                      "internalType": "uint256",
+                      "name": "newReputation",
+                      "type": "uint256"
+                    }
+                  ],
+                  "name": "ReputationUpdated",
+                  "type": "event"
+                },
+                {
+                  "anonymous": false,
+                  "inputs": [
+                    {
+                      "indexed": true,
+                      "internalType": "uint256",
+                      "name": "modelId",
+                      "type": "uint256"
+                    },
+                    {
+                      "indexed": false,
+                      "internalType": "uint256",
+                      "name": "totalReward",
+                      "type": "uint256"
+                    }
+                  ],
+                  "name": "RewardDistributed",
+                  "type": "event"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "uint256",
+                      "name": "",
+                      "type": "uint256"
+                    }
+                  ],
+                  "name": "_chargingStations",
+                  "outputs": [
+                    {
+                      "internalType": "address",
+                      "name": "",
+                      "type": "address"
+                    }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "uint256",
+                      "name": "",
+                      "type": "uint256"
+                    }
+                  ],
+                  "name": "_modelPublishers",
+                  "outputs": [
+                    {
+                      "internalType": "address",
+                      "name": "",
+                      "type": "address"
+                    }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "address",
+                      "name": "_address",
+                      "type": "address"
+                    }
+                  ],
+                  "name": "addOracleAdress",
+                  "outputs": [],
+                  "stateMutability": "nonpayable",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "address",
+                      "name": "_newOwner",
+                      "type": "address"
+                    }
+                  ],
+                  "name": "addOwner",
+                  "outputs": [],
+                  "stateMutability": "nonpayable",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "address",
+                      "name": "",
+                      "type": "address"
+                    }
+                  ],
+                  "name": "adminExist",
+                  "outputs": [
+                    {
+                      "internalType": "bool",
+                      "name": "",
+                      "type": "bool"
+                    }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "uint256",
+                      "name": "",
+                      "type": "uint256"
+                    }
+                  ],
+                  "name": "adminsList",
+                  "outputs": [
+                    {
+                      "internalType": "address",
+                      "name": "",
+                      "type": "address"
+                    }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "address",
+                      "name": "",
+                      "type": "address"
+                    }
+                  ],
+                  "name": "balances",
+                  "outputs": [
+                    {
+                      "internalType": "uint256",
+                      "name": "",
+                      "type": "uint256"
+                    }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "uint256",
+                      "name": "",
+                      "type": "uint256"
+                    }
+                  ],
+                  "name": "chargingStations",
+                  "outputs": [
+                    {
+                      "internalType": "address",
+                      "name": "",
+                      "type": "address"
+                    }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "address",
+                      "name": "",
+                      "type": "address"
+                    }
+                  ],
+                  "name": "csSelectionCount",
+                  "outputs": [
+                    {
+                      "internalType": "uint256",
+                      "name": "",
+                      "type": "uint256"
+                    }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "uint256",
+                      "name": "_modelId",
+                      "type": "uint256"
+                    }
+                  ],
+                  "name": "deposit",
+                  "outputs": [],
+                  "stateMutability": "payable",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "uint256",
+                      "name": "_modelId",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "address[]",
+                      "name": "CSs",
+                      "type": "address[]"
+                    }
+                  ],
+                  "name": "distributeReward",
+                  "outputs": [],
+                  "stateMutability": "nonpayable",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "address",
+                      "name": "_addr",
+                      "type": "address"
+                    }
+                  ],
+                  "name": "getBalance",
+                  "outputs": [
+                    {
+                      "internalType": "uint256",
+                      "name": "",
+                      "type": "uint256"
+                    }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "address",
+                      "name": "",
+                      "type": "address"
+                    },
+                    {
+                      "internalType": "address",
+                      "name": "",
+                      "type": "address"
+                    }
+                  ],
+                  "name": "interactionsChargingStationWithPublisher",
+                  "outputs": [
+                    {
+                      "internalType": "uint256",
+                      "name": "",
+                      "type": "uint256"
+                    }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "address",
+                      "name": "_addr",
+                      "type": "address"
+                    }
+                  ],
+                  "name": "isChargingStation",
+                  "outputs": [
+                    {
+                      "internalType": "bool",
+                      "name": "",
+                      "type": "bool"
+                    }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "address[]",
+                      "name": "arr",
+                      "type": "address[]"
+                    },
+                    {
+                      "internalType": "address",
+                      "name": "look",
+                      "type": "address"
+                    }
+                  ],
+                  "name": "isInAddressArray",
+                  "outputs": [
+                    {
+                      "internalType": "bool",
+                      "name": "",
+                      "type": "bool"
+                    }
+                  ],
+                  "stateMutability": "pure",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "address",
+                      "name": "_addr",
+                      "type": "address"
+                    }
+                  ],
+                  "name": "isModelPublisher",
+                  "outputs": [
+                    {
+                      "internalType": "bool",
+                      "name": "",
+                      "type": "bool"
+                    }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "address",
+                      "name": "_address",
+                      "type": "address"
+                    }
+                  ],
+                  "name": "isOracle",
+                  "outputs": [
+                    {
+                      "internalType": "bool",
+                      "name": "",
+                      "type": "bool"
+                    }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "address",
+                      "name": "_user",
+                      "type": "address"
+                    }
+                  ],
+                  "name": "isOwner",
+                  "outputs": [
+                    {
+                      "internalType": "bool",
+                      "name": "",
+                      "type": "bool"
+                    }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "uint256",
+                      "name": "_modelId",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "address",
+                      "name": "_station",
+                      "type": "address"
+                    }
+                  ],
+                  "name": "joinChargingStationModel",
+                  "outputs": [],
+                  "stateMutability": "nonpayable",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "uint256",
+                      "name": "",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "",
+                      "type": "uint256"
+                    }
+                  ],
+                  "name": "modelChargingStations",
+                  "outputs": [
+                    {
+                      "internalType": "address",
+                      "name": "",
+                      "type": "address"
+                    }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "uint256",
+                      "name": "",
+                      "type": "uint256"
+                    }
+                  ],
+                  "name": "modelDeposits",
+                  "outputs": [
+                    {
+                      "internalType": "uint256",
+                      "name": "",
+                      "type": "uint256"
+                    }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "uint256",
+                      "name": "",
+                      "type": "uint256"
+                    }
+                  ],
+                  "name": "modelPublishers",
+                  "outputs": [
+                    {
+                      "internalType": "address",
+                      "name": "",
+                      "type": "address"
+                    }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "uint256",
+                      "name": "",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "address",
+                      "name": "",
+                      "type": "address"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "",
+                      "type": "uint256"
+                    }
+                  ],
+                  "name": "modelSelectedChargingStations",
+                  "outputs": [
+                    {
+                      "internalType": "uint256",
+                      "name": "",
+                      "type": "uint256"
+                    }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "uint256",
+                      "name": "",
+                      "type": "uint256"
+                    }
+                  ],
+                  "name": "modelTrainingRounds",
+                  "outputs": [
+                    {
+                      "internalType": "uint256",
+                      "name": "",
+                      "type": "uint256"
+                    }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "uint256",
+                      "name": "",
+                      "type": "uint256"
+                    }
+                  ],
+                  "name": "models",
+                  "outputs": [
+                    {
+                      "internalType": "uint256",
+                      "name": "modelId",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "string",
+                      "name": "modelCID",
+                      "type": "string"
+                    },
+                    {
+                      "internalType": "string",
+                      "name": "infoCID",
+                      "type": "string"
+                    },
+                    {
+                      "internalType": "address",
+                      "name": "publisher",
+                      "type": "address"
+                    },
+                    {
+                      "internalType": "string",
+                      "name": "globalModelWeightsCID",
+                      "type": "string"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "currentRound",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "maxRounds",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "requiredChargingStations",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "string",
+                      "name": "state",
+                      "type": "string"
+                    }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "string",
+                      "name": "_modelCID",
+                      "type": "string"
+                    },
+                    {
+                      "internalType": "string",
+                      "name": "_infoCID",
+                      "type": "string"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "maxRounds",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "requiredChargingStations",
+                      "type": "uint256"
+                    }
+                  ],
+                  "name": "publishModel",
+                  "outputs": [],
+                  "stateMutability": "nonpayable",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "address",
+                      "name": "",
+                      "type": "address"
+                    }
+                  ],
+                  "name": "publisherInteractions",
+                  "outputs": [
+                    {
+                      "internalType": "uint256",
+                      "name": "",
+                      "type": "uint256"
+                    }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "address",
+                      "name": "_station",
+                      "type": "address"
+                    }
+                  ],
+                  "name": "registerChargingStation",
+                  "outputs": [],
+                  "stateMutability": "nonpayable",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "address",
+                      "name": "_publisher",
+                      "type": "address"
+                    }
+                  ],
+                  "name": "registerModelPublisher",
+                  "outputs": [],
+                  "stateMutability": "nonpayable",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "address",
+                      "name": "",
+                      "type": "address"
+                    }
+                  ],
+                  "name": "registeredChargingStations",
+                  "outputs": [
+                    {
+                      "internalType": "bool",
+                      "name": "",
+                      "type": "bool"
+                    }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "address",
+                      "name": "",
+                      "type": "address"
+                    }
+                  ],
+                  "name": "registeredModelPublishers",
+                  "outputs": [
+                    {
+                      "internalType": "bool",
+                      "name": "",
+                      "type": "bool"
+                    }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "address",
+                      "name": "",
+                      "type": "address"
+                    }
+                  ],
+                  "name": "reputation",
+                  "outputs": [
+                    {
+                      "internalType": "uint256",
+                      "name": "",
+                      "type": "uint256"
+                    }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "uint256",
+                      "name": "",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "",
+                      "type": "uint256"
+                    }
+                  ],
+                  "name": "scores",
+                  "outputs": [
+                    {
+                      "internalType": "address",
+                      "name": "chargingStation",
+                      "type": "address"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "score",
+                      "type": "uint256"
+                    }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "uint256",
+                      "name": "_modelId",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "bytes32",
+                      "name": "_hashIMCID",
+                      "type": "bytes32"
+                    },
+                    {
+                      "internalType": "bytes[]",
+                      "name": "signatures",
+                      "type": "bytes[]"
+                    },
+                    {
+                      "internalType": "address[]",
+                      "name": "signers",
+                      "type": "address[]"
+                    },
+                    {
+                      "internalType": "address",
+                      "name": "_station",
+                      "type": "address"
+                    }
+                  ],
+                  "name": "submitIntermediateModel",
+                  "outputs": [],
+                  "stateMutability": "nonpayable",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "uint256",
+                      "name": "",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "address",
+                      "name": "",
+                      "type": "address"
+                    }
+                  ],
+                  "name": "submittedHashes",
+                  "outputs": [
+                    {
+                      "internalType": "bytes32",
+                      "name": "",
+                      "type": "bytes32"
+                    }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+                },
+                {
+                  "inputs": [],
+                  "name": "threshold",
+                  "outputs": [
+                    {
+                      "internalType": "uint256",
+                      "name": "",
+                      "type": "uint256"
+                    }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "uint256",
+                      "name": "_modelId",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "address[]",
+                      "name": "benignCSs",
+                      "type": "address[]"
+                    }
+                  ],
+                  "name": "updateCSSelectionCount",
+                  "outputs": [],
+                  "stateMutability": "nonpayable",
+                  "type": "function"
+                },
+                {
+                  "inputs": [
+                    {
+                      "internalType": "uint256",
+                      "name": "",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "address",
+                      "name": "",
+                      "type": "address"
+                    }
+                  ],
+                  "name": "updates",
+                  "outputs": [
+                    {
+                      "internalType": "uint256",
+                      "name": "trainingAccuracy",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "trainingDataPoints",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "string",
+                      "name": "weights",
+                      "type": "string"
+                    }
+                  ],
+                  "stateMutability": "view",
+                  "type": "function"
+                }
+              ]
+          }
+      }
+  }
+}

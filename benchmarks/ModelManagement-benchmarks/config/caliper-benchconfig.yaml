@@ -1,0 +1,63 @@
+test:
+  name: Model management 
+  description: Model management performance test
+  workers:
+    type: local
+    number: 1
+  rounds:
+   - label: warm-up (ignore results)
+     txNumber: 500
+     rateControl:
+       type: maximum-rate
+       opts:
+         tps: 50
+         step: 5
+         sampleInterval: 10
+         includeFailed: true
+     workload:
+       module: workload/publishModel.js 
+       arguments:
+        contract: ModelManagement
+        num: 1
+   - label: round-1
+     txNumber: 500
+     rateControl:
+       type: maximum-rate
+       opts:
+         tps: 50
+         step: 5
+         sampleInterval: 10
+         includeFailed: true
+     workload:
+       module: workload/publishModel.js
+       arguments:
+        contract: ModelManagement
+        num: 2      
+   - label: round-2
+     txNumber: 500
+     rateControl:
+       type: maximum-rate
+       opts:
+         tps: 50
+         step: 5
+         sampleInterval: 10
+         includeFailed: true
+     workload:
+       module: workload/publishModel.js
+       arguments:
+        contract: ModelManagement
+        num: 3   
+   - label: round-3
+     txNumber: 500
+     rateControl:
+       type: maximum-rate
+       opts:
+         tps: 50
+         step: 5
+         sampleInterval: 10
+         includeFailed: true
+     workload:
+       module: workload/publishModel.js
+       arguments:
+        contract: ModelManagement
+        num: 4        
