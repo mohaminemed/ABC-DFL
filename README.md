@@ -10,7 +10,7 @@ Welcome to the **ABC-DFL** project — a decentralized and resilient framework f
 
 ## 🧠 What is ABC-DFL?
 
-**ABC-DFL** (Adaptive Blockchain-Connected Decentralized Federated Learning) is a framework designed to secure and scale federated learning across Electric Vehicles (EVs) and Charging Stations (CSs). It tackles **model poisoning attacks** using a robust and fully decentralized validation mechanism.
+**ABC-DFL** (A Byzantine-Robust Clustered Decentralized Federated Learning Framework for Secure and Efficient EV Battery Data Management) is a framework designed to secure and scale federated learning across Electric Vehicles (EVs) and Charging Stations (CSs). It tackles **model poisoning attacks** using a robust and clustered decentralized aggregation mechanism.
 
 ---
 
@@ -46,5 +46,5 @@ REPORT_GAS=true npx hardhat test
 # Start a local Hardhat blockchain node
 npx hardhat node
 
-# Deploy smart contracts using Hardhat Ignition
-npx hardhat ignition deploy ./ignition/modules/Lock.js
+# Deploy smart contracts using Hardhat
+npx hardhat run scripts/deploy_1.js
