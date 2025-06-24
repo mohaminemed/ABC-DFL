@@ -132,11 +132,33 @@ def train_client(
 
        
 
-    # ------------------ LDP for correct behavior ------------------ #
+    # ------------------ DP for correct behavior ------------------ #
     else:
-        for key in local_model:
+       for key in local_model:
             model_update[key] = local_model[key] - global_model_dict[key]  
+       for key in local_model:
+            model_update[key] = local_model[key] - global_model_dict[key]  
+        # Privacy parameters
+       epsilon = 20.0   # control the desired privacy level
+       delta = 1e-5    # Small probability of exceeding epsilon-privacy
+       sensitivity = 1.0   # Sensitivity of model updates (can be adjusted based on clipping strategy)
 
+       # Compute noise scale
+       laplace_scale = sensitivity / epsilon  # Laplace mechanism
+       gaussian_scale = (sensitivity * math.sqrt(2 * math.log(1.25 / delta))) / (epsilon*10)  # Gaussian mechanism
+       
+       #print(f"Laplace scale: {laplace_scale:.4f}; Gaussian scale: {gaussian_scale:.4f}")
+
+       for key in model_update:
+         noise = torch.normal(mean=0.0, std=0.0000, size=model_update[key].shape).to(model_update[key].device)
+         if "weight" in key:  # Apply noise only to weights
+          if "classifier" in key:  # classification layer
+            noise = torch.distributions.Laplace(0, laplace_scale).sample(model_update[key].shape).to(model_update[key].device)
+          elif "regressor" in key:  # Regression layers
+            noise = torch.normal(mean=0.0, std=gaussian_scale, size=model_update[key].shape).to(model_update[key].device)
+           
+         model_update[key] += noise
+    
     
     return model_update
 
