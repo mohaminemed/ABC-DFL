@@ -12,7 +12,7 @@ For Oracles and L2 integration, check our [AutoDFL](https://github.com/meryemmal
 
 ## 🧠 What is ABC-DFL?
 
-**ABC-DFL** (A Byzantine-Robust Clustered Decentralized Federated Learning Framework for Secure and Efficient EV Battery Data Management) is a framework designed to secure and scale federated learning across Electric Vehicles (EVs) and Charging Stations (CSs). It tackles **model poisoning attacks** using a robust decentralized aggregation mechanism.
+**ABC-DFL** (A Byzantine-Robust Clustered Decentralized Federated Learning Framework for Secure and Efficient EV Battery Data Management) is a framework designed to securely and efficiently manage federated learning tasks across clustered dynamic networks of Electric Vehicles (EVs) and Charging Stations (CSs). It tackles **model poisoning attacks** using a robust decentralized aggregation mechanism.
 
 ---
 
@@ -50,3 +50,17 @@ npx hardhat node
 
 # Deploy smart contracts using Hardhat
 npx hardhat run scripts/deploy_1.js
+
+```
+
+## 🧪 Run FLECA Simulations
+
+To simulate the FLECA protocol:
+
+- The main simulation configuration is defined in the `fl_exec.py` file.
+- To change the malicious client rate or behavior, refer to the `initialize_attack_clients()` function in `fl_main.py`.
+- A subset of the **EVBattery** [EVBattery Dataset on OneDrive](https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvcyFBbkU4QmZIZTNJT2xnMTN2Mmx0VjBlUDEtQWdQP2U9OW80emdM&id=A583DCDEF1053C71%21477&cid=A583DCDEF1053C71)
+dataset is used for testing and is included in the `FLECA/` folder.
+
+  
+
