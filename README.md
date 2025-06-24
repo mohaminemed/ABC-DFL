@@ -2,7 +2,7 @@
 
 Welcome to the **ABC-DFL** project — a clustered, decentralized, and resilient framework for federated learning in dynamic environments. This repository includes:
 
-- ✅ Implementation of the **FLECA** filtering and aggregation mechanism  
+- ✅ Implementation of the **FLECA** filtering and aggregation protocol  
 - ✅ Smart contracts for trust and coordination  
 - ✅ Benchmark tests for performance evaluation
 
