@@ -4,7 +4,9 @@ Welcome to the **ABC-DFL** project — a clustered, decentralized, and resilient
 
 - ✅ Implementation of the **FLECA** filtering and aggregation mechanism  
 - ✅ Smart contracts for trust and coordination  
-- ✅ Benchmark tests for performance evaluation  
+- ✅ Benchmark tests for performance evaluation
+
+For Oracles and L2 integration, check our AutoDFL repository: https://github.com/meryemmalakdif/AutoDFL
 
 ---
 
