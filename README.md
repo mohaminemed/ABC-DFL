@@ -6,7 +6,7 @@ Welcome to the **ABC-DFL** project — a clustered, decentralized, and resilient
 - ✅ Smart contracts for trust and coordination  
 - ✅ Benchmark tests for performance evaluation
 
-For Oracles and L2 integration, check our [AutoDFL](https://github.com/meryemmalakdif/AutoDFL) repository 
+For Oracles and L2 integration, check our [AutoDFL](https://github.com/meryemmalakdif/AutoDFL) repository. 
 
 ---
 
@@ -35,7 +35,7 @@ Importantly, FLECA operates **without relying on a reference model**, ensuring r
 
 ## 🚀 Getting Started
 
-You can run the following commands to explore and test the system:
+You can run the following commands to explore and test ABC-DFL smart contracts:
 
 ```bash
 
