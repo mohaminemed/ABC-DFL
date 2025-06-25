@@ -59,7 +59,7 @@ To simulate the FLECA protocol:
 
 - The main simulation configuration is defined in the `fl_exec.py` file.
 - To change the malicious clients (EVs or CSs) rate, refer to the `initialize_attack_clients()` function in `fl_main.py`.
-- A subset of the **EVBattery** [EVBattery Dataset](https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvcyFBbkU4QmZIZTNJT2xnMTN2Mmx0VjBlUDEtQWdQP2U9OW80emdM&id=A583DCDEF1053C71%21477&cid=A583DCDEF1053C71)
+- A subset of the [EVBattery Dataset](https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvcyFBbkU4QmZIZTNJT2xnMTN2Mmx0VjBlUDEtQWdQP2U9OW80emdM&id=A583DCDEF1053C71%21477&cid=A583DCDEF1053C71)
 dataset is used for testing and is included in the `FLECA/` folder.
 
   
