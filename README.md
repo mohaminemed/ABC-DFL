@@ -1,16 +1,18 @@
 # ABC-DFL
 
-Welcome to the **ABC-DFL** project — a decentralized and resilient framework for federated learning in dynamic environments. This repository includes:
+Welcome to the **ABC-DFL** project — a clustered, decentralized, and resilient framework for federated learning in dynamic environments. This repository includes:
 
-- ✅ Implementation of the **FLECA** filtering and aggregation mechanism  
+- ✅ Implementation of the **FLECA** filtering and aggregation protocol  
 - ✅ Smart contracts for trust and coordination  
-- ✅ Benchmark tests for performance evaluation  
+- ✅ Benchmark tests for performance evaluation
+
+For Oracles and L2 integration, check our [AutoDFL](https://github.com/meryemmalakdif/AutoDFL) repository. 
 
 ---
 
 ## 🧠 What is ABC-DFL?
 
-**ABC-DFL** (Adaptive Blockchain-Connected Decentralized Federated Learning) is a framework designed to secure and scale federated learning across Electric Vehicles (EVs) and Charging Stations (CSs). It tackles **model poisoning attacks** using a robust and fully decentralized validation mechanism.
+**ABC-DFL** (A Byzantine-Robust Clustered Decentralized Federated Learning Framework for Secure and Efficient EV Battery Data Management) is a framework designed to securely and efficiently manage federated learning tasks across clustered and dynamic networks of Electric Vehicles (EVs) and Charging Stations (CSs). It tackles **model poisoning attacks** using a robust decentralized aggregation mechanism.
 
 ---
 
@@ -33,7 +35,7 @@ Importantly, FLECA operates **without relying on a reference model**, ensuring r
 
 ## 🚀 Getting Started
 
-You can run the following commands to explore and test the system:
+You can run the following commands to explore and test ABC-DFL smart contracts:
 
 ```bash
 
@@ -46,5 +48,19 @@ REPORT_GAS=true npx hardhat test
 # Start a local Hardhat blockchain node
 npx hardhat node
 
-# Deploy smart contracts using Hardhat Ignition
-npx hardhat ignition deploy ./ignition/modules/Lock.js
+# Deploy smart contracts using Hardhat
+npx hardhat run scripts/deploy_1.js
+
+```
+
+## 🧪 Run FLECA Simulations
+
+To simulate the FLECA protocol:
+
+- The main simulation configuration is defined in the `fl_exec.py` file.
+- To change the malicious clients (EVs or CSs) rate, refer to the `initialize_attack_clients()` function in `fl_main.py`.
+- A subset of the [EVBattery Dataset](https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvcyFBbkU4QmZIZTNJT2xnMTN2Mmx0VjBlUDEtQWdQP2U9OW80emdM&id=A583DCDEF1053C71%21477&cid=A583DCDEF1053C71)
+dataset is used for testing and is included in the `FLECA/` folder.
+
+  
+
