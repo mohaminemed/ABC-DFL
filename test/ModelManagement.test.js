@@ -83,7 +83,7 @@ describe("ModelManagement", function () {
         await modelManagement.connect(publisherSigner).publishModel("modelCID", "infoCID", 10, 3);
         await modelManagement.connect(owner).registerChargingStation(chargingStation1.address);
 
-        // Assume deposit amount is 1 ETH (Replace this with actual deposit logic)
+        // Assume deposit amount is 1 ETH 
         const depositAmount = ethers.parseEther("1.0"); 
 
         const tx = await modelManagement.connect(chargingStation1).joinChargingStationModel(0, { value: depositAmount });
