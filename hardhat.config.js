@@ -2,7 +2,7 @@ require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
 
 module.exports = {
-  solidity: "0.8.0",  // or the version you're using
+  solidity: "0.8.0",  
   networks: {
     hardhat: {
       chainId: 1337,
