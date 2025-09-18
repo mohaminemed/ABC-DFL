@@ -4,7 +4,7 @@ async function signCID(wallet, cid) {
     // Use solidityPackedKeccak256 to pack and hash the data
     const messageHash = ethers.solidityPackedKeccak256(
         ["string"], // specify the types (in this case, a single string)
-        [cid]       // the corresponding values to be packed
+        [cid]       // the corresponding CID value to be packed
     );
 
     // Sign the hashed message
