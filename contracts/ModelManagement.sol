@@ -9,7 +9,7 @@ contract ModelManagement is AccessManagement {
     struct Update {
         uint trainingAccuracy;
         uint trainingDataPoints;
-        string weights;
+        string weights; // CID
     }
 
     struct Score {
