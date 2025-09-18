@@ -4,7 +4,7 @@ async function main() {
   // Deploy AccessManagement Contract
   const AccessManagement = await hre.ethers.getContractFactory("AccessManagement");
   const accessManagement = await AccessManagement.deploy(); // Deploy the contract
-  await accessManagement.waitForDeployment(); // Wait for deployment to complete
+  await accessManagement.waitForDeployment(); // Wait for deployment 
   console.log(`AccessManagement deployed to: ${await accessManagement.getAddress()}`);
 
   // Deploy ModelManagement Contract
