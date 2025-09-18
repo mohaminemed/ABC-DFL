@@ -10,13 +10,13 @@ For Oracles and L2 integration, check our [AutoDFL](https://github.com/meryemmal
 
 ---
 
-## 🧠 What is ABC-DFL?
+## What is ABC-DFL?
 
 **ABC-DFL** (A Byzantine-Robust Clustered Decentralized Federated Learning Framework for Secure and Efficient EV Battery Data Management) is a framework designed to securely and efficiently manage federated learning tasks across clustered and dynamic networks of Electric Vehicles (EVs) and Charging Stations (CSs). It tackles **model poisoning attacks** using a robust decentralized aggregation mechanism.
 
 ---
 
-## 🔍 About FLECA
+## About FLECA
 
 At the core of ABC-DFL lies **FLECA**:  
 > **F**iltered  
@@ -33,7 +33,7 @@ Importantly, FLECA operates **without relying on a reference model**, ensuring r
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 You can run the following commands to explore and test ABC-DFL smart contracts:
 
@@ -53,7 +53,7 @@ npx hardhat run scripts/deploy_1.js
 
 ```
 
-## 🧪 Run FLECA Simulations
+## Run FLECA Simulations
 
 To simulate the FLECA protocol:
 
