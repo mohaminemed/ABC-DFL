@@ -122,7 +122,7 @@ def train_client(
     # ------------------ Krum Attack ------------------ #
     elif client_behavior == "krum":
         deviation = 0.1
-        shift = 1.0
+        shift = 2.0
         for key in global_model_dict:
            local_model[key] =  global_model_dict[key] + deviation * torch.randn_like(local_model[key]) + shift 
 
