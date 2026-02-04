@@ -7,8 +7,6 @@ Welcome to the **ABC-DFL** project — a clustered, decentralized, and resilient
 - ✅ Benchmark tests for performance evaluation
 
 
-We are currently working on a full integration framework for ABC-DFL. In the meantime, if you are interested in hybrid on-chain/off-chain decentralized federated learning (DFL) systems, check out our previous work on [AutoDFL](https://github.com/meryemmalakdif/AutoDFL), which provides Oracles and L2 integration for scalable and secure deployments.
-
 ---
 
 ## What is ABC-DFL?
@@ -62,6 +60,4 @@ All C-DFL benchmark experiments can be reproduced using the scripts in the src/ 
 ⚠️ Note: A README.md is included inside the src/ directory with detailed instructions to run all benchmarks, configure attacks, and evaluate defenses.
 ```
 
-
-  
-
+We are currently working on a full integration framework for ABC-DFL. In the meantime, if you are interested in hybrid on-chain/off-chain decentralized federated learning (DFL) systems, check out our previous work on [AutoDFL](https://github.com/meryemmalakdif/AutoDFL), which provides Oracles and L2 integration for scalable and secure deployments.
