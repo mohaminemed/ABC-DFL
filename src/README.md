@@ -31,7 +31,7 @@ The framework supports extensible models, attacks, and aggregators, and outputs 
 
 ## B. ⚙️ Environment Setup
 
-### 1. Create Conda Environment (recommended)
+### 1. Create Python Environment (recommended)
 
 ```bash
 python3 -m venv venv
