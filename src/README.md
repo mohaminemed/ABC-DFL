@@ -53,10 +53,11 @@ Experiments in the paper were run on:
 - Update the device field in BASE_CONFIG if needed
 
 ### 4. 📊 Dataset
-Place the prepared dataset here:
+Place the prepared dataset [EVBattery Dataset](https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvcyFBbkU4QmZIZTNJT2xnMTN2Mmx0VjBlUDEtQWdQP2U9OW80emdM&id=A583DCDEF1053C71%21477&cid=A583DCDEF1053C71) here:
 ```bash
 ./datasets/battery_dataset3_prepared.npz
 ```
+
 - This file must contain: Training & Test sequences, Anomaly labels, Capacity labels
 - The loader is implemented in: preprocessing.py → data_preparation()
 - Client partitioning supports: IID Dirichlet Non-IID (α configurable)
