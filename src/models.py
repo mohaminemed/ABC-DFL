@@ -6,7 +6,6 @@ import torch.nn as nn
 import warnings
 import torch.nn.functional as F
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 warnings.filterwarnings("ignore", category=UserWarning, module="torch.nn.modules.rnn")
 
 class MultiTaskLSTM(nn.Module):
@@ -33,7 +32,7 @@ class MultiTaskLSTM(nn.Module):
             nn.Linear(32, 1)
         )
 
-    def forward(self, x):
+    def forward(self, x, device):
         h0 = torch.zeros(self.num_layers, x.size(0), self.hidden_dim).to(device)
         c0 = torch.zeros(self.num_layers, x.size(0), self.hidden_dim).to(device)
         out, _ = self.lstm(x, (h0, c0))
@@ -66,7 +65,7 @@ class MultiTaskCNN(nn.Module):
             nn.Linear(32, 1)
         )
 
-    def forward(self, x):
+    def forward(self, x, device=None):
         # Change shape to (batch_size, input_dim, seq_len)
         x = x.permute(0, 2, 1)
 
@@ -102,7 +101,7 @@ class MultiTaskBiLSTM(nn.Module):
             nn.Linear(32, 1)
         )
 
-    def forward(self, x):
+    def forward(self, x, device):
         h0 = torch.zeros(self.num_layers * 2, x.size(0), self.hidden_dim).to(device)  # *2 for bidirectional
         c0 = torch.zeros(self.num_layers * 2, x.size(0), self.hidden_dim).to(device)
         out, _ = self.lstm(x, (h0, c0))
@@ -139,7 +138,7 @@ class MultiTaskTransformer(nn.Module):
             nn.Linear(32, 1)
         )
 
-    def forward(self, x):
+    def forward(self, x, device=None):
         # Transformer expects input of shape (seq_len, batch_size, input_dim)
         x = x.permute(1, 0, 2)  # Swap batch and seq_len dimensions
         transformer_out = self.transformer(x)
@@ -173,7 +172,7 @@ class MultiTaskGRU(nn.Module):
             nn.Linear(32, 1)
         )
 
-    def forward(self, x):
+    def forward(self, x, device):
         h0 = torch.zeros(self.num_layers, x.size(0), self.hidden_dim).to(device)
         out, _ = self.gru(x, h0)
         shared_repr = out[:, -1, :]  # Last time step

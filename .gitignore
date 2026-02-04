@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+
+
+# Environment
+venv/
+results/
+datasets/
+
+ignition/models/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# VSCode
+.vscode/
+
+# Logs
+*.log
+
+# Torch / PyTorch
+*.pt
+*.pth
+*.ckpt
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+*.swp
