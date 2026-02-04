@@ -140,13 +140,8 @@ We enforce deterministic behavior via: "seed": 42
 For full reproducibility:
 1. Use the same dataset
 2. Keep fixed seeds
-3. Run each experiment multiple times (paper uses ×3 runs with averaging)
+3. Run each experiment multiple times (paper uses ×3 runs with averaging: seed 42, 70, 84)
 
-**Paper Results.** To reproduce ABC-DFL tables and figures:
-1. Run fl_exec.py
-2. Collect CSVs in results/
-3. Compute AIS / ASR from prediction files
-4. Average over repeated runs (change the seed 42, 70, 84)
 
 
 
