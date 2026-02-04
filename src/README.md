@@ -18,8 +18,10 @@ The framework supports extensible models, attacks, and aggregators, and outputs 
 ├── fl_exec.py # Entry point (C-DFL experiment launcher)
 ├── fl_main.py # Core FL loop (FL_main_Loop)
 ├── preprocessing.py # Dataset loading and client partitioning
+├── fl_training.py # Local FL train loop (few epochs) with DP or attack if enabled
+├── fl_aggregation.py # C-DFL aggregation
 ├── models/ # Multi-task models (BiLSTM, LSTM, CNN, ...)
-├── defenses/ # Robust aggregation and defense mechanisms
+├── defenses/ # Robust aggregation and defense mechanisms used by fl_aggregation.py
 ├── datasets/
 │ └── battery_dataset3_prepared.npz # Prepared battery dataset
 ├── utils.py # utilities (evaluation, logs)
@@ -76,27 +78,34 @@ This launches the full C-DFL pipeline:
 All experimental parameters are defined in fl_exec.py.
 
 **Models**
+```python
 MODELS = [
-    "MultiTaskbiLSTM", ...
+    "MultiTaskbiLSTM",...
 ]
-
+```
 **Aggregation / Defense**
+```python
 AGGREGATIONS = [
-    "FLECAv2",
+    "FLECAv2", "UBAR",...
 ]
+```
 **Supported alternatives:** 
 FedAvg, Trimmed-Mean, Multi-Krum, FLAME, Weak-DP, Norm-Clip, UBAR, and FedProx
 
 **Attacks**
+```python
 ATTACKS = [
-    "adaptive",
+    "gauss", "adaptive",...
 ]
+```
 **Also supported:**
 1. *Untargetted poisoning:* label flipping, gaussian, krum / trim, feature attack
 2. *Targeted poisoning (backdoor):* badnets, neurotoxin, model replacement (scaling)
 
 **IID / Non-IID**
-- IID_OPTIONS = [False, True]
+```python
+IID_OPTIONS = [False, True]
+```
 - Non-IID uses *Dirichlet* sampling: "dirichlet_alpha": 0.8
 
 ### 2. 🧪 Core Parameters
