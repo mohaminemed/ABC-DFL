@@ -32,7 +32,7 @@ FLECA uses a **two-stage filtering process**:
 - **Stage 1:** Performed locally at each **Electric Vehicle (EV)**
 - **Stage 2:** Executed by decentralized **Oracles**
 
-Importantly, FLECA operates **without relying on a reference model**, ensuring resilience, decentralization, and adaptability in dynamic environments.
+Importantly, FLECA operates **without relying on a central aggregator**, ensuring trustless decentralization, and resilience in dynamic EVs environments.
 
 ---
 
