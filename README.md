@@ -11,7 +11,11 @@ Welcome to the **ABC-DFL** project — a clustered, decentralized, and resilient
 
 ## What is ABC-DFL?
 
-**ABC-DFL** (A Byzantine-Robust Clustered Decentralized Federated Learning Framework for Secure and Efficient EV Battery Data Management) is a framework designed to securely and efficiently manage federated learning tasks across clustered and dynamic networks of Electric Vehicles (EVs) and Charging Stations (CSs). It tackles **model poisoning attacks** using a robust decentralized aggregation mechanism.
+**ABC-DFL** (A Byzantine-Robust Clustered Decentralized Federated Learning Framework for Secure and Efficient EV Battery Data Management) is a framework designed to securely and efficiently manage federated learning tasks across clustered and dynamic networks of Electric Vehicles (EVs) and Charging Stations (CSs). It tackles **model poisoning attacks** using a robust layred decentralized aggregation mechanism called FLECA.
+
+<p align="center">
+  <img src="ABC-DFL.png" width="70%">
+</p>
 
 ---
 
